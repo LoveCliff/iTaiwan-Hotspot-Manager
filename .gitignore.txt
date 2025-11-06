@@ -1,0 +1,6 @@
+# Visual Studio 缓存
+.vs/
+
+# .NET 编译输出
+[Bb]in/
+[Oo]bj/
