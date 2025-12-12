@@ -1,46 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\",
+  "WorkspaceRootPath": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\models\\hotspot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:models\\hotspot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\controllers\\hotspotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:controllers\\hotspotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\itaiwanapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:itaiwanapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\converts\\stringtodoubleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:converts\\stringtodoubleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\app_data\\ipselect_tw.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:app_data\\ipselect_tw.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\migrations\\20251106155200_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:migrations\\20251106155200_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\nkust-114-1\\itaiwanapi\\itaiwanapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:itaiwanapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\controllers\\hotspotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:controllers\\hotspotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\models\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:models\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\app_data\\ipselect_tw.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:app_data\\ipselect_tw.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\models\\hotspot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:models\\hotspot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\migrations\\20251106155200_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:migrations\\20251106155200_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\itaiwanapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:itaiwanapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|d:\\github\\itaiwan-hotspot-manager\\itaiwanapi\\converts\\stringtodoubleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0F6128-8B41-4863-AB19-DFBDD86AD247}|ItaiwanAPI.csproj|solutionrelative:converts\\stringtodoubleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,137 +70,199 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IpSelect_tw.json",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\App_Data\\IpSelect_tw.json",
-              "RelativeDocumentMoniker": "App_Data\\IpSelect_tw.json",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\App_Data\\IpSelect_tw.json",
-              "RelativeToolTip": "App_Data\\IpSelect_tw.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-06T15:38:56.121Z",
+              "DocumentIndex": 1,
+              "Title": "ItaiwanAPI",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\ItaiwanAPI.csproj",
+              "RelativeDocumentMoniker": "ItaiwanAPI.csproj",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\ItaiwanAPI.csproj",
+              "RelativeToolTip": "ItaiwanAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T18:04:49.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-06T15:04:20.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DataImportService.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Services\\DataImportService.cs",
+              "RelativeDocumentMoniker": "Services\\DataImportService.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Services\\DataImportService.cs",
+              "RelativeToolTip": "Services\\DataImportService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAywBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T15:29:57.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "HotspotsController.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Controllers\\HotspotsController.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Controllers\\HotspotsController.cs",
               "RelativeDocumentMoniker": "Controllers\\HotspotsController.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Controllers\\HotspotsController.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Controllers\\HotspotsController.cs",
               "RelativeToolTip": "Controllers\\HotspotsController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAADwvxUAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAA0wDUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T15:32:17.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DataImportService.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Services\\DataImportService.cs",
-              "RelativeDocumentMoniker": "Services\\DataImportService.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Services\\DataImportService.cs",
-              "RelativeToolTip": "Services\\DataImportService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Models\\PagedResult.cs",
+              "RelativeDocumentMoniker": "Models\\PagedResult.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Models\\PagedResult.cs",
+              "RelativeToolTip": "Models\\PagedResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T15:29:57.833Z",
+              "WhenOpened": "2025-12-11T09:28:05.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Program.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Program.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAFwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T15:17:46.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Hotspot.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Models\\Hotspot.cs",
-              "RelativeDocumentMoniker": "Models\\Hotspot.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Models\\Hotspot.cs",
-              "RelativeToolTip": "Models\\Hotspot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAQwBYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T15:10:47.146Z",
+              "WhenOpened": "2025-12-11T17:48:33.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StringToDoubleConverter.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Converts\\StringToDoubleConverter.cs",
-              "RelativeDocumentMoniker": "Converts\\StringToDoubleConverter.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Converts\\StringToDoubleConverter.cs",
-              "RelativeToolTip": "Converts\\StringToDoubleConverter.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAwwAQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:24:50.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-06T15:04:20.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20251106155200_InitialCreate.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Migrations\\20251106155200_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251106155200_InitialCreate.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Migrations\\20251106155200_InitialCreate.cs",
-              "RelativeToolTip": "Migrations\\20251106155200_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T15:52:00.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Data\\AppDbContext.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T15:15:12.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ItaiwanAPI",
-              "DocumentMoniker": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\ItaiwanAPI.csproj",
-              "RelativeDocumentMoniker": "ItaiwanAPI.csproj",
-              "ToolTip": "D:\\Github\\Nkust-114-1\\ItaiwanAPI\\ItaiwanAPI.csproj",
-              "RelativeToolTip": "ItaiwanAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T15:03:58.297Z",
+              "DocumentIndex": 12,
+              "Title": "ItaiwanAPI.http",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\ItaiwanAPI.http",
+              "RelativeDocumentMoniker": "ItaiwanAPI.http",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\ItaiwanAPI.http",
+              "RelativeToolTip": "ItaiwanAPI.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-11-12T15:43:59.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-12T15:39:29.075Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IpSelect_tw.json",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\App_Data\\IpSelect_tw.json",
+              "RelativeDocumentMoniker": "App_Data\\IpSelect_tw.json",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\App_Data\\IpSelect_tw.json",
+              "RelativeToolTip": "App_Data\\IpSelect_tw.json",
+              "ViewState": "AgIAANGwAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-11T09:13:10.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20251106155200_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Migrations\\20251106155200_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251106155200_InitialCreate.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Migrations\\20251106155200_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20251106155200_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T15:52:00.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Hotspot.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Models\\Hotspot.cs",
+              "RelativeDocumentMoniker": "Models\\Hotspot.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Models\\Hotspot.cs",
+              "RelativeToolTip": "Models\\Hotspot.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T15:10:47.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T15:31:50.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StringToDoubleConverter.cs",
+              "DocumentMoniker": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Converts\\StringToDoubleConverter.cs",
+              "RelativeDocumentMoniker": "Converts\\StringToDoubleConverter.cs",
+              "ToolTip": "D:\\Github\\iTaiwan-Hotspot-Manager\\ItaiwanAPI\\Converts\\StringToDoubleConverter.cs",
+              "RelativeToolTip": "Converts\\StringToDoubleConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T16:24:50.051Z"
             }
           ]
         }

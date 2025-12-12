@@ -14,7 +14,7 @@ namespace ItaiwanAPI.Services
             _dbContext = dbContext;
         }
 
-        // 从JSON文件导入数据到MySQL
+        // 从JSON文件導入數據到MySQL(僅首次執行會導入，故0引用）
 
         public async Task ImportFromJsonAsync(string jsonPath)
         {

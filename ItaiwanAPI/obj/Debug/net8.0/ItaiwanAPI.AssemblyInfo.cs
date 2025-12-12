@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ItaiwanAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cce8adc152d2efac3451ef80d21d46c44e681588")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+377a821f3476a58af9a692f87f68f528f7d9f078")]
 [assembly: System.Reflection.AssemblyProductAttribute("ItaiwanAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ItaiwanAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

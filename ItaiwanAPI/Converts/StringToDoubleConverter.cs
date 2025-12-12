@@ -9,10 +9,10 @@ public class StringToDoubleConverter : JsonConverter<double>
     {
         if (reader.TokenType == JsonTokenType.String)
         {
-            // 尝试将字符串转为double，兼容各种格式（如带逗号、空值）
+            
             if (double.TryParse(reader.GetString(), NumberStyles.Any, CultureInfo.InvariantCulture, out var result))
                 return result;
-            return 0; // 转换失败时返回默认值
+            return 0; 
         }
         return reader.GetDouble();
     }

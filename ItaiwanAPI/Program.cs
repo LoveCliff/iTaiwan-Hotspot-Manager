@@ -1,8 +1,12 @@
 using ItaiwanAPI.Data;
 using ItaiwanAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
+using Microsoft.IdentityModel.Tokens;
 using System.IO;
+using System.Text;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +18,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
-// 注册 DataImportService（必须与 AppDbContext 同生命周期，用 AddScoped）
+// 注册 DataImportService
 builder.Services.AddScoped<DataImportService>();
 
 
@@ -23,13 +27,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowVueApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5174") // 前端Vite默认端口
+        policy.WithOrigins("http://localhost:5173") // 前端Vite默认端口
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
-// 添加控制器支持
+// 添加控制器服務
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -38,6 +42,37 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "ItaiwanAPI", Version = "v1" });
 });
+
+
+//配置identity和身份驗證
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+// JWT驗證
+var jwtKey = "ThisIsASecretKey1234567890PleaseChangeItInProduction"; // 密钥(生产环境要很长且保密)
+var jwtIssuer = "http://localhost:5143";
+var jwtAudience = "http://localhost:5143";
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtIssuer,
+        ValidAudience = jwtAudience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+    };
+});
+
 
 var app = builder.Build();
 app.UseSwagger();
@@ -55,6 +90,8 @@ app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ItaiwanAPI 
 
 // 启用控制器路由
 app.UseCors("AllowVueApp");
+app.UseAuthentication(); // 識別你是誰
+app.UseAuthorization();  // 確認你有沒有權限
 app.MapControllers();
 app.Run();
 
