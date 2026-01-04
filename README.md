@@ -52,7 +52,7 @@
 👉 [**瀏覽所有系統截圖 (View all screenshots)**](./screenshots/README.md)
 ---
 ### 1. 資料準備
-1. 前往 [政府開放資料平台]：[iTaiwan 公共區域免費無線上網熱點資訊](https://data.gov.tw/dataset/126997)
+1. 前往 [政府開放資料平台]：[iTaiwan 公共區域免費無線上網熱點資訊](https://data.gov.tw/dataset/5962)
 2. 將檔案更名為 `IpSelect_tw.json`。
 3. 於 `ItaiwanAPI` 專案根目錄下建立 `App_Data` 資料夾，並將檔案放入：
 
