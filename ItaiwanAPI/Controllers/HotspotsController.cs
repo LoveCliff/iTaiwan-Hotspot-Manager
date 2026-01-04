@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ItaiwanAPI.Data;
+﻿using ItaiwanAPI.Data;
 using ItaiwanAPI.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 namespace ItaiwanAPI.Controllers;
 
-
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class HotspotsController : ControllerBase

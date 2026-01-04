@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using ItaiwanAPI.Models;
 namespace ItaiwanAPI.Data
 {
-    public class AppDbContext : IdentityDbContext<IdentityUser>
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         
 
@@ -15,6 +15,7 @@ namespace ItaiwanAPI.Data
 
         }
         public DbSet<Hotspot> Hotspots { get; set; }  //Hotspots 表
+        public DbSet<UserFavorite> UserFavorites { get; set; }//user收藏表
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

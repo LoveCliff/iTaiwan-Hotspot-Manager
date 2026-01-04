@@ -33,8 +33,8 @@
       </div>
     </template>
 
-    <div v-if="viewMode === 'list'">
-      <el-table :data="hotspots" border style="width: 100%; min-height: 500px;" v-loading="loading">
+    <div v-if="viewMode === 'list'" style="height: 100%;">
+      <el-table :data="hotspots" border style="width: 100%; min-height: 700px;" v-loading="loading">
         <el-table-column prop="name" label="熱點名稱" width="200" />
         <el-table-column prop="address" label="地址" />
         <el-table-column label="距離" width="120" align="center">
@@ -43,6 +43,28 @@
               {{ scope.row.distanceKm }} km
             </span>
             <span v-else>-</span>
+          </template>
+        </el-table-column>
+
+        <el-table-column label="操作" width="150" align="center">
+          <template #default="scope">
+            <el-tooltip effect="dark" :content="isFavorite(scope.row.id) ? '取消收藏' : '加入收藏'" placement="top">
+              <el-button 
+                circle 
+                :type="isFavorite(scope.row.id) ? 'warning' : 'default'"
+                @click="toggleFavorite(scope.row)"
+              >
+                <el-icon>
+                  <component :is="isFavorite(scope.row.id) ? 'StarFilled' : 'Star'" />
+                </el-icon>
+              </el-button>
+            </el-tooltip>
+
+            <el-tooltip effect="dark" content="開啟地圖導航" placement="top">
+              <el-button circle plain type="primary" @click="openGoogleMaps(scope.row)">
+                <el-icon><Position /></el-icon>
+              </el-button>
+            </el-tooltip>
           </template>
         </el-table-column>
       </el-table>
@@ -62,6 +84,7 @@
     <div v-else class="map-container">
       <l-map 
         ref="map" 
+        v-if="mapCenter"
         v-model:zoom="zoom" 
         :center="mapCenter" 
         :use-global-leaflet="false"
@@ -73,23 +96,34 @@
         ></l-tile-layer>
 
         <l-marker 
-          v-for="item in hotspots" 
+          v-for="item in mapDisplayHotspots" 
           :key="item.id" 
-          :lat-lng="[item.latitude, item.longitude]"
+          :lat-lng="[item.latitude || item.Latitude, item.longitude || item.Longitude]"
         >
           <l-popup>
-            <div style="text-align: center;">
+            <div style="text-align: center; min-width: 150px;">
               <h3 style="margin: 5px 0;">{{ item.name }}</h3>
-              <p style="margin: 5px 0; color: #666;">{{ item.address }}</p>
-              <p v-if="item.distanceKm" style="color: #409EFF; font-weight: bold;">
-                距您 {{ item.distanceKm }} km
-              </p>
+              <p style="margin: 5px 0 10px; color: #666; font-size: 13px;">{{ item.address }}</p>
+              
+              <div style="display: flex; justify-content: center; gap: 8px;">
+                <el-button 
+                  size="small" 
+                  type="primary" 
+                  @click="openGoogleMaps(item)"
+                >
+                  導航
+                </el-button>
+
+                <el-button 
+                  size="small" 
+                  :type="isFavorite(item.id) ? 'warning' : 'default'"
+                  @click="toggleFavorite(item)"
+                >
+                  {{ isFavorite(item.id) ? '已收藏' : '收藏' }}
+                </el-button>
+              </div>
             </div>
           </l-popup>
-        </l-marker>
-        
-        <l-marker v-if="userCoords.lat" :lat-lng="[userCoords.lat, userCoords.lon]">
-           <l-popup>我原本的位置</l-popup>
         </l-marker>
       </l-map>
     </div>
@@ -98,12 +132,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed,watch } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
-import { Location, List, MapLocation } from '@element-plus/icons-vue' // 引入新圖標
-
-// 引入 Leaflet 地圖組件
+import { Location, List, MapLocation, Star, StarFilled, Position } from '@element-plus/icons-vue'
 import "leaflet/dist/leaflet.css"
 import { LMap, LTileLayer, LMarker, LPopup } from "@vue-leaflet/vue-leaflet"
 
@@ -113,65 +145,58 @@ const searchKeyword = ref('')
 const loading = ref(false)
 const loadingLocation = ref(false)
 const currentPage = ref(1)
-const pageSize = ref(10) // 地圖模式下或許可以考慮顯示更多，但目前先保持一致
+const favoriteIds = ref(new Set()) // 這裡存 ID
+const pageSize = ref(15)
 const total = ref(0)
 const userCoords = ref({ lat: null, lon: null })
 
-// 新增：視圖模式 ('list' 或 'map')
 const viewMode = ref('list')
-// 新增：地圖縮放和中心點 (默認台北 101 附近)
 const zoom = ref(13)
 const mapCenter = ref([25.0330, 121.5654]) 
 
-// === 核心獲取數據方法 ===
+// === 計算屬性：地圖顯示優化 ===
+// 防止地圖模式下渲染 5000 個點卡死，這裡只取前 419 個有效坐標
+// 這是「直接渲染」模式下保證不卡的關鍵
+const mapDisplayHotspots = computed(() => {
+  if (viewMode.value !== 'map') return []
+  
+  return hotspots.value
+    .filter(h => {
+        const lat = h.latitude || h.Latitude
+        const lng = h.longitude || h.Longitude
+        return lat && lng && !isNaN(parseFloat(lat)) && !isNaN(parseFloat(lng))
+    })
+    .slice(0, 419) // 限制數量，保證流暢
+})
+
+// === API ===
 const fetchData = async () => {
   loading.value = true
   try {
-    // === 判斷當前模式 ===
     const isMapMode = viewMode.value === 'map'
+    // 地圖模式稍微多拿一點數據，列表模式只拿一頁
+    const limit = isMapMode ? 500 : pageSize.value
     
-    // 如果是地圖模式，我們請求 1000 筆 (或是更多，視你後端性能而定)
-    // 如果是列表模式，我們只請求 10 筆 (pageSize.value)
-    const requestPageSize = isMapMode ? 1000 : pageSize.value
-    
-    // 如果是地圖模式，強制作為第 1 頁
-    const requestPage = isMapMode ? 1 : currentPage.value
-
     const params = {
-      page: requestPage, 
-      pageSize: requestPageSize,
+      page: isMapMode ? 1 : currentPage.value,
+      pageSize: limit,
       keyword: searchKeyword.value
     }
-
-    // 附帶座標 (如果有)
+    
     if (userCoords.value.lat) {
       params.lat = userCoords.value.lat
       params.lon = userCoords.value.lon
     }
 
     const response = await axios.get('http://localhost:5143/api/Hotspots', { params })
+    const result = response.data
+    const items = Array.isArray(result) ? result : (result.items || [])
     
-    // 兼容處理 (防止後端格式不同)
-    if (response.data.items) {
-      hotspots.value = response.data.items
-      
-      // 注意：只有在列表模式下，才需要更新「總頁數」
-      // 這樣切換回列表時，分頁條才不會壞掉
-      if (!isMapMode) {
-        total.value = response.data.totalCount
-      }
-    } else {
-      hotspots.value = response.data
-    }
+    hotspots.value = items
     
-    // 如果切換到了地圖模式且有數據，自動定位到第一筆
-    if (isMapMode && hotspots.value.length > 0) {
-      // 這裡加個簡單判斷，如果地圖中心還在默認位置，就移動過去
-      // 或者你可以選擇每次都移動
-       const first = hotspots.value[0]
-       // mapCenter.value = [first.latitude, first.longitude] // (可選：自動移動鏡頭)
+    if (!isMapMode && result.totalCount) {
+      total.value = result.totalCount
     }
-
   } catch (error) {
     console.error(error)
     ElMessage.error('獲取數據失敗')
@@ -179,22 +204,58 @@ const fetchData = async () => {
     loading.value = false
   }
 }
-// === 新增：監聽視圖切換 ===
-// 當 viewMode 改變時 (從 list 變 map，或反之)，自動重新抓取數據
-watch(viewMode, () => {
-  fetchData()
-})
 
-// === 事件處理 ===
-const handleSearch = () => {
-  currentPage.value = 1
-  fetchData()
+// === 收藏功能 (已修復變色問題) ===
+const fetchFavoriteIds = async () => {
+  try {
+    const res = await axios.get('http://localhost:5143/api/favorites') 
+    // 假設後端返回對象數組，轉成 ID 集合
+    favoriteIds.value = new Set(res.data.map(item => item.id))
+  } catch (error) {
+    console.error('加載收藏失敗')
+  }
 }
 
-const handlePageChange = (newPage) => {
-  currentPage.value = newPage
-  fetchData()
+// 判斷是否收藏
+const isFavorite = (id) => {
+    return favoriteIds.value.has(id)
 }
+
+const toggleFavorite = async (item) => {
+  const id = item.id
+  const isFav = favoriteIds.value.has(id)
+  
+  try {
+    // 為了讓視圖更新，我們複製一個新的 Set
+    const newSet = new Set(favoriteIds.value)
+    
+    if (isFav) {
+      // 這裡請替換成你真實的取消收藏 API
+      await axios.delete(`http://localhost:5143/api/favorites/${id}`)
+      newSet.delete(id)
+      ElMessage.success('已取消收藏')
+    } else {
+      // 這裡請替換成你真實的加入收藏 API
+      await axios.post(`http://localhost:5143/api/favorites/${id}`)
+      newSet.add(id)
+      ElMessage.success('收藏成功')
+    }
+    
+    // 重新賦值，觸發 Vue 更新（這就是變色的關鍵）
+    favoriteIds.value = newSet
+    
+  } catch (error) {
+    if (error.response?.status === 401) {
+      ElMessage.warning('請先登錄')
+    } else {
+      ElMessage.error('操作失敗')
+    }
+  }
+}
+
+// === 其他功能 ===
+const handleSearch = () => { currentPage.value = 1; fetchData() }
+const handlePageChange = () => fetchData()
 
 const getLocationAndSort = () => {
   if (!navigator.geolocation) return ElMessage.warning('不支持定位')
@@ -202,46 +263,45 @@ const getLocationAndSort = () => {
   
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      // 1. 保存用戶位置
-      userCoords.value.lat = pos.coords.latitude
-      userCoords.value.lon = pos.coords.longitude
-      
-      // 2. 更新地圖中心到用戶位置
+      userCoords.value = { lat: pos.coords.latitude, lon: pos.coords.longitude }
       mapCenter.value = [pos.coords.latitude, pos.coords.longitude]
-      zoom.value = 15 // 拉近鏡頭
-
+      zoom.value = 14 // 拉近
       loadingLocation.value = false
       ElMessage.success('已定位')
-      
-      // 3. 重新獲取數據 (後端會計算距離並排序)
       currentPage.value = 1
       fetchData()
     },
-    (err) => {
-      loadingLocation.value = false
-      ElMessage.error('定位失敗')
-    }
+    (err) => { loadingLocation.value = false; ElMessage.error('定位失敗') }
   )
 }
 
+const openGoogleMaps = (item) => {
+  const lat = item.latitude || item.Latitude
+  const lng = item.longitude || item.Longitude
+  const name = item.name
+  window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=${encodeURIComponent(name)}`, '_blank')
+}
+
+// 切換模式時重新獲取數據
+watch(viewMode, () => {
+    hotspots.value = [] // 先清空，避免閃爍
+    fetchData()
+})
+
 onMounted(() => {
   fetchData()
+  fetchFavoriteIds() // 初始加載收藏列表
 })
 </script>
 
 <style scoped>
-.header-actions {
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-}
+.header-actions { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 .search-bar { display: flex; align-items: center; margin-top: 10px; }
 .pagination-container { margin-top: 20px; display: flex; justify-content: flex-end; }
-
-/* 地圖容器樣式 */
 .map-container {
-  height: 600px; /* 必須給高度，否則地圖不顯示 */
+  height: 70vh; 
   width: 100%;
   border: 1px solid #dcdfe6;
-  border-radius: 4px;
-  overflow: hidden;
+  z-index: 1;
 }
 </style>

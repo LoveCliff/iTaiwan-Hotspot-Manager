@@ -1,4 +1,5 @@
 using ItaiwanAPI.Data;
+using ItaiwanAPI.Models;
 using ItaiwanAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -44,8 +45,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-//配置identity和身份驗證
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+//配置identity和身份驗證（ApplicationUser是繼承後的子類，添加了nickname和頭像）
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
@@ -75,8 +76,8 @@ builder.Services.AddAuthentication(options =>
 
 
 var app = builder.Build();
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ItaiwanAPI v1"));
+//app.UseSwagger();
+//app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ItaiwanAPI v1"));
 
 //using (var scope = app.Services.CreateScope())
 //{
