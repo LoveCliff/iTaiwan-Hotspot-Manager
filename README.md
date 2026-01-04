@@ -49,7 +49,7 @@
 ## 📸 系統截圖 (Screenshots)
 本專案包含多張系統操作截圖，請點擊下方連結查看：
 
-👉 [**瀏覽所有系統截圖 (View all screenshots)**](./screenshots)
+👉 [**瀏覽所有系統截圖 (View all screenshots)**](./screenshots/README.md)
 ---
 ### 1. 資料準備
 1. 前往 [政府開放資料平台]：[iTaiwan 公共區域免費無線上網熱點資訊](https://data.gov.tw/dataset/126997)
