@@ -44,7 +44,7 @@
 * **UI Library**: Element Plus
 * **Routing**: Vue Router
 * **HTTP Client**: Axios
-* **Map Integration**: leaflet， Google Maps API 
+* **Map Integration**: Leaflet， Google Maps API 
   
 ## 📸 系統截圖 (Screenshots)
 本專案包含多張系統操作截圖，請點擊下方連結查看：
